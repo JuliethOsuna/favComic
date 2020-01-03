@@ -8,6 +8,10 @@ import { GetComicsService } from '../services/get-comics/get-comics.service'
 })
 export class RateComicComponent implements OnInit {
 
+  public comicName;
+  public comicImg;
+  public comicId;
+
   constructor(private getComicService: GetComicsService) { }
 
   ngOnInit() {
@@ -18,13 +22,20 @@ export class RateComicComponent implements OnInit {
 
     const comicId = this.randomComicId();
 
-    this.getComicService.getComic(comicId).subscribe(res => {
-      console.log(res);
+    this.getComicService.getComic(comicId).subscribe((res:any = {}) => {
+      console.log(res)
+      this.comicName = res.safe_title;
+      this.comicImg = res.img;
+      this.comicId = res.num;
     })
   }
 
   randomComicId(min = 1, max = 2251) {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  refreshComic(){
+    this.getComic();
   }
 
 }

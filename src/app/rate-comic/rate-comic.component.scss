@@ -1,3 +1,7 @@
+.container {
+  text-align: center;
+}
+
 .comicTitle {
   color: white;
   font-size: 40px;
@@ -7,13 +11,26 @@
 
 .cntImage {
   margin: auto;
+  position: relative;
+  display: inline-block;
 }
 
 .comicImage {
   margin: auto;
   display: block;
+  max-height: 500px;
 }
 
 .rateStars {
   color: white;
+}
+
+.refreshIcon {
+  margin-top: 20px;
+  border: none;
+  background: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
 }

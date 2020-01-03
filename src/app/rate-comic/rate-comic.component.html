@@ -1,9 +1,12 @@
-<div>
-  <div class="comicTitle">Nombre del cómic</div>
+<div class="container">
+  <div class="comicTitle">{{comicName}}</div>
   <div class="cntImage">
-    <img class="comicImage" src="../../assets/mafaldaComic.jpg" alt="">
+    <img class="comicImage" src="{{comicImg}}" alt="">
   </div>
   <div class="rateStars">
     <app-rating></app-rating>
+    <button class="refreshIcon" (click)="refreshComic()">
+      <img src="../../assets/refrescar.png" alt="">
+    </button>
   </div>
 </div>

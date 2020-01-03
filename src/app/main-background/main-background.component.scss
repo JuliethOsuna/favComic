@@ -1,11 +1,11 @@
 .background-image{
   background-image: url("../../assets/cómicPantallaInicio.jpg");
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0.18;
   z-index: -1;
+  bottom: 0;
 }
 
