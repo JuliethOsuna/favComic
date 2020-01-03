@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { RatingPageComponent } from './rating-page/rating-page.component';
 import { NavComponent } from './nav/nav.component';
 import { RateComicComponent } from './rate-comic/rate-comic.component';
 import { RatingsComponent } from './ratings/ratings.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { RatingsComponent } from './ratings/ratings.component';
     NavComponent,
     RateComicComponent,
     RatingsComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
