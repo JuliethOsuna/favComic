@@ -3,19 +3,27 @@
   margin-top: 25px;
 }
 
-.stars {
+
+.btnStars {
   margin: auto;
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 5px;
-}
-
-.btnStars {
   border: none;
   background: none;
   outline: none;
+  height: 25px;
+  width: 25px;
+  position: relative;
   &:hover {
     cursor: pointer;
   }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 

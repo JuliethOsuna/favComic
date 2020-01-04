@@ -11,6 +11,7 @@ export class RateComicComponent implements OnInit {
   public comicName;
   public comicImg;
   public comicId;
+  public rating = 0;
 
   constructor(private getComicService: GetComicsService) { }
 
@@ -26,6 +27,7 @@ export class RateComicComponent implements OnInit {
       this.comicName = res.safe_title;
       this.comicImg = res.img;
       this.comicId = res.num;
+      this.rating++;
     })
   }
 

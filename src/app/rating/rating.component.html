@@ -1,7 +1,6 @@
 <div class="cntStars">
-  <div class="stars" *ngFor="let star of stars">
-    <button class="btnStars" (click)="rate(star)">
-      <img src="../../assets/estrella-vacia.png" alt="">
+    <button class="btnStars" (click)="rate(position)" *ngFor="let position of stars" (mouseover)='over($event)' (mouseout)='out()'>
+      <img class="stars" *ngIf="position <= _rating" src="../../assets/estrella-llena.png" alt="">
+      <img class="stars" *ngIf="position > _rating" src="../../assets/estrella-vacia.png" alt="">
     </button>
-  </div>
 </div>
