@@ -4,9 +4,13 @@
     <img class="comicImage" src="{{comicImg}}" alt="">
   </div>
   <div class="rateStars">
-    <app-rating></app-rating>
+    <app-rating
+    [comicName]="comicName"
+    [comicImg]="comicImg"
+    [comicId]="comicId"
+    ></app-rating>
     <button class="refreshIcon" (click)="refreshComic()">
-      <img src="../../assets/refrescar.png" alt="">
+      <img src="../../assets/refrescar.png" alt="" title="Refrescar cómic">
     </button>
   </div>
 </div>
