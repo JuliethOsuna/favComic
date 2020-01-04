@@ -23,7 +23,6 @@ export class RateComicComponent implements OnInit {
     const comicId = this.randomComicId();
 
     this.getComicService.getComic(comicId).subscribe((res:any = {}) => {
-      console.log(res)
       this.comicName = res.safe_title;
       this.comicImg = res.img;
       this.comicId = res.num;

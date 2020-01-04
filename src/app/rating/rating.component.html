@@ -1,6 +1,6 @@
 <div class="cntStars">
   <div class="stars" *ngFor="let star of stars">
-    <button class="btnStars">
+    <button class="btnStars" (click)="rate(star)">
       <img src="../../assets/estrella-vacia.png" alt="">
     </button>
   </div>
