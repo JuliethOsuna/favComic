@@ -8,6 +8,9 @@ import { StoreComicsService } from '../services/store-comics/store-comics.servic
 })
 export class RatingsComponent implements OnInit {
 
+  public dataComic:Array<any>=[];
+
+
   constructor(private storeComicsService: StoreComicsService) { }
 
   ngOnInit() {
@@ -15,6 +18,9 @@ export class RatingsComponent implements OnInit {
   }
 
   showInfoComic(){
-    this.storeComicsService.data.subscribe(data => {})
+    this.storeComicsService.data.subscribe(data => {
+      console.log("dataRaitings", data)
+      this.dataComic = data;
+    })
   }
 }

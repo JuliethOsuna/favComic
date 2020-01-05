@@ -1,4 +1,11 @@
 <div class="cntRaitings">
   <div class="raitingsTitle">Mis calificaciones</div>
-  <div class="carousel"></div>
+  <div class="cntCard">
+    <app-comic-card *ngFor="let data of dataComic"
+    [comicName]="data.comicName"
+    [comicImg]="data.comicImg"
+    [comicId]="data.comicId"
+    [rate]="data.rate"
+    ></app-comic-card>
+  </div>
 </div>
