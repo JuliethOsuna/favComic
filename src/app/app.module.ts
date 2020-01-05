@@ -12,6 +12,7 @@ import { NavComponent } from './nav/nav.component';
 import { RateComicComponent } from './rate-comic/rate-comic.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { RatingComponent } from './rating/rating.component';
+import { ComicCardComponent } from './comic-card/comic-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RatingComponent } from './rating/rating.component';
     RateComicComponent,
     RatingsComponent,
     RatingComponent,
+    ComicCardComponent,
   ],
   imports: [
     BrowserModule,
