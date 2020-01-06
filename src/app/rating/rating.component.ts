@@ -17,11 +17,15 @@ export class RatingComponent implements OnInit {
   @Input()
   set rating(rating:number){
     this._rating = 0;
-    this.currentRating = 0;
+    this._currentRating = 0;
+  }
+  @Input()
+  set currentRating(currentRating:number){
+    this._rating = currentRating;
   }
 
   public stars = [1, 2, 3, 4, 5];
-  public currentRating:number = this.rating;
+  public _currentRating:number = this.rating;
   public _rating;
 
   constructor(private storeComicsService: StoreComicsService) {}
@@ -40,8 +44,8 @@ export class RatingComponent implements OnInit {
     }
     this._rating = position;
     this.storeComicsService.updateData(data);
-    this.currentRating = this._rating;
-    console.log(position, this.currentRating, this._rating)
+    this._currentRating = this._rating;
+    console.log(position, this._currentRating, this._rating)
   }
 
   over(event){
@@ -49,12 +53,12 @@ export class RatingComponent implements OnInit {
     const currentElement = event.target;
     const parent = currentElement.parentNode;
     const index = [].indexOf.call (parent.children, currentElement);
-    this.currentRating = this._rating;
+    this._currentRating = this._rating;
     this._rating = index + 1;
   }
 
   out(){
-    console.log(this.currentRating, this.rating, "out")
-    this._rating = this.currentRating;
+    console.log(this._currentRating, this.rating, "out")
+    this._rating = this._currentRating;
   }
 }

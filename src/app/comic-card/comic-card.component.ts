@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShowComicService } from '../services/show-comic/show-comic.service'
 
 @Component({
   selector: 'app-comic-card',
@@ -16,9 +17,20 @@ export class ComicCardComponent implements OnInit {
   @Input()
   rate:number;
 
-  constructor() { }
+  constructor(private showComicService: ShowComicService) { }
 
   ngOnInit() {
+  }
+
+  sendData(){
+    console.log("sendData")
+    const comicData = {
+      comicName: this.comicName,
+      comicImg: this.comicImg,
+      comicId: this.comicId,
+      rate: this.rate
+    }
+    this.showComicService.setData(comicData);
   }
 
 }

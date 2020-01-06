@@ -1,7 +1,7 @@
 <div class="container">
   <div class="comicTitle">{{comicName}}</div>
   <div class="cntImage">
-    <img class="comicImage" src="{{comicImg}}" alt="">
+    <img class="comicImage" src="{{comicImg}}" title="{{comicName}}">
   </div>
   <div class="rateStars">
     <app-rating
@@ -9,6 +9,7 @@
     [comicImg]="comicImg"
     [comicId]="comicId"
     [rating]="rating"
+    [currentRating]="currentRating"
     ></app-rating>
     <button class="refreshIcon" (click)="refreshComic()">
       <img src="../../assets/refrescar.png" alt="" title="Refrescar cómic">

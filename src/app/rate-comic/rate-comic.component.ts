@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetComicsService } from '../services/get-comics/get-comics.service'
+import { ShowComicService } from '../services/show-comic/show-comic.service'
 
 @Component({
   selector: 'app-rate-comic',
@@ -12,11 +13,13 @@ export class RateComicComponent implements OnInit {
   public comicImg;
   public comicId;
   public rating = 0;
+  public currentRating;
 
-  constructor(private getComicService: GetComicsService) { }
+  constructor(private getComicService: GetComicsService, private showComicService: ShowComicService) { }
 
   ngOnInit() {
-    this.getComic()
+    this.getComic();
+    this.showComic();
   }
 
   getComic(){
@@ -37,6 +40,15 @@ export class RateComicComponent implements OnInit {
 
   refreshComic(){
     this.getComic();
+  }
+
+  showComic(){
+    this.showComicService.data.subscribe(data => {
+      this.comicName = data.comicName;
+      this.comicImg = data.comicImg;
+      this.comicId = data.comicId;
+      this.currentRating = data.rate;
+    })
   }
 
 }
