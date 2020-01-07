@@ -1,28 +1,26 @@
 .container {
-  text-align: center;
+  text-align: center
 }
 
 .comicTitle {
   color: white;
   font-size: 40px;
-  margin: 40px 0 40px 0;
+  margin: 40px;
   text-align: center;
 }
 
 .cntImage {
   margin: auto;
   position: relative;
-  display: inline-block;
 }
 
 .comicImage {
   margin: auto;
   display: block;
-  max-height: 500px;
-}
-
-.rateStars {
-  color: white;
+  width: 90%;
+    @media (min-width: 769px) {
+      max-height: 500px;
+    }
 }
 
 .refreshIcon {
