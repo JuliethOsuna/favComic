@@ -12,12 +12,17 @@
 .cntImage {
   margin: auto;
   position: relative;
+
+  @media (min-width: 769px) {
+    display: inline-block;
+  }
 }
 
 .comicImage {
   margin: auto;
   display: block;
   width: 90%;
+
     @media (min-width: 769px) {
       max-height: 500px;
     }
